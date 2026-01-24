@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>House of Bachaé - Digital Strategy | AI-Driven Empowerment</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>House of Bachae - AI Automation Consulting | Minneapolis</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
@@ -14,18 +11,17 @@
             --obsidian: #0a0a0a;
             --dark-brown: #3d2817;
             --bone-white: #f5f5f0;
-            --cream: #ede7d9;
             --bronze: #b8860b;
             --gold: #d4af37;
             --warm-brown: #5a3e2b;
-            --graphite: #2a2a2a;
+            --graphite: #4a4a4a;
             --stone-beige: #d4c5b0;
         }
         
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.7;
-            color: var(--cream);
+            color: var(--bone-white);
             background: var(--obsidian);
         }
         
@@ -35,7 +31,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            border-bottom: 2px solid var(--bronze);
             backdrop-filter: blur(20px);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
         }
@@ -51,9 +47,9 @@
         
         nav a {
             text-decoration: none;
-            color: var(--cream);
-            font-weight: 400;
-            font-size: 0.95rem;
+            color: var(--bone-white);
+            font-weight: 600;
+            font-size: 1rem;
             letter-spacing: 1px;
             transition: all 0.3s;
             position: relative;
@@ -65,28 +61,33 @@
             bottom: -5px;
             left: 0;
             width: 0;
-            height: 1px;
+            height: 2px;
             background: var(--bronze);
             transition: width 0.3s;
         }
         
-        nav a:hover::after { width: 100%; }
-        nav a:hover { color: var(--bronze); }
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        nav a:hover {
+            color: var(--gold);
+        }
         
         .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            font-weight: 300;
-            color: var(--bronze);
-            letter-spacing: 4px;
-            text-transform: uppercase;
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--bronze) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
         }
         
         .hero {
             padding: 100px 40px 150px 40px;
             position: relative;
-            background: radial-gradient(ellipse at left, rgba(61, 40, 23, 0.3) 0%, var(--obsidian) 50%);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            background: radial-gradient(ellipse at left, var(--dark-brown) 0%, var(--obsidian) 50%);
+            border-bottom: 3px solid var(--bronze);
             overflow: hidden;
         }
         
@@ -97,14 +98,14 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 20% 50%, rgba(184, 134, 11, 0.08) 0%, transparent 50%);
+            background: radial-gradient(circle at 20% 50%, rgba(184, 134, 11, 0.15) 0%, transparent 50%);
         }
         
         .hero-content {
             max-width: 1400px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 350px 1fr;
+            grid-template-columns: 280px 1fr;
             gap: 80px;
             align-items: center;
             position: relative;
@@ -112,204 +113,429 @@
         }
         
         .hero-logo {
-            width: 350px;
-            height: 350px;
+            width: 280px;
+            height: 280px;
             position: relative;
-            border-radius: 50%;
-            padding: 30px;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, rgba(184, 134, 11, 0.15) 30%, transparent 70%);
-            box-shadow: 0 0 60px rgba(212, 175, 55, 0.3), 0 0 120px rgba(184, 134, 11, 0.2);
+            background: radial-gradient(circle, rgba(61, 40, 23, 0.3) 0%, transparent 70%);
+            padding: 15px;
+            border-radius: 8px;
         }
         
         .hero-logo img {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            filter: brightness(1.15) contrast(1.05);
-            border-radius: 50%;
+            filter: brightness(1.1) drop-shadow(0 0 30px rgba(184, 134, 11, 0.3));
         }
         
-        .hero-text { text-align: left; }
+        .hero-text {
+            text-align: left;
+        }
         
         .hero h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 4.2rem;
+            font-size: 4.5rem;
             margin-bottom: 30px;
-            font-weight: 400;
-            line-height: 1.15;
-            color: var(--bone-white);
-            letter-spacing: 0.5px;
+            font-weight: 800;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--bone-white) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         .hero .tagline {
-            font-size: 1.3rem;
+            font-size: 1.6rem;
             margin-bottom: 60px;
-            color: var(--bronze);
-            font-weight: 300;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            color: var(--stone-beige);
+            font-weight: 400;
+            letter-spacing: 1px;
         }
         
         .cta-button {
             background: linear-gradient(135deg, var(--bronze) 0%, var(--gold) 100%);
             color: var(--obsidian);
-            padding: 18px 50px;
-            font-size: 1rem;
+            padding: 22px 60px;
+            font-size: 1.2rem;
             border: none;
-            font-weight: 600;
+            font-weight: 700;
             text-decoration: none;
             display: inline-block;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
             transition: all 0.4s;
             text-transform: uppercase;
             cursor: pointer;
-            box-shadow: 0 8px 30px rgba(184, 134, 11, 0.25);
+            box-shadow: 0 10px 40px rgba(184, 134, 11, 0.4);
             position: relative;
             overflow: hidden;
         }
         
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
         .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(184, 134, 11, 0.35);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(184, 134, 11, 0.6);
         }
         
         .services {
             padding: 120px 40px;
             max-width: 1400px;
             margin: 0 auto;
+            background: linear-gradient(180deg, var(--obsidian) 0%, #0f0f0f 100%);
         }
         
         .services h2 {
-            font-family: 'Cormorant Garamond', serif;
             text-align: center;
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 80px;
-            font-weight: 300;
-            color: var(--bone-white);
-            letter-spacing: 2px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--bone-white) 0%, var(--bronze) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         .service-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px;
         }
         
         .service-card {
-            background: rgba(212, 197, 176, 0.03);
-            padding: 50px 40px;
-            border: 1px solid rgba(184, 134, 11, 0.15);
+            background: linear-gradient(135deg, #1a1a1a 0%, #242424 100%);
+            padding: 60px 45px;
+            border-left: 4px solid var(--bronze);
             transition: all 0.4s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(184, 134, 11, 0.05) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        
+        .service-card:hover::before {
+            opacity: 1;
         }
         
         .service-card:hover {
-            border-color: rgba(184, 134, 11, 0.4);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #242424 0%, #2a2a2a 100%);
+            transform: translateX(15px) translateY(-5px);
+            box-shadow: 0 15px 50px rgba(184, 134, 11, 0.3);
+            border-left-color: var(--gold);
         }
         
         .service-card h3 {
-            font-family: 'Cormorant Garamond', serif;
             font-size: 1.8rem;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: var(--bronze);
-            font-weight: 400;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .service-card p {
+            color: var(--stone-beige);
+            line-height: 1.9;
+            font-size: 1.1rem;
+        }
+        
+        .case-studies {
+            padding: 120px 40px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            border-top: 3px solid var(--bronze);
+        }
+        
+        .case-studies h2 {
+            text-align: center;
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--bone-white) 0%, var(--bronze) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .case-studies-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 80px auto;
+            font-size: 1.2rem;
+            color: var(--stone-beige);
+        }
+        
+        .case-study {
+            max-width: 1200px;
+            margin: 0 auto 80px auto;
+            background: linear-gradient(135deg, #1a1a1a 0%, #242424 100%);
+            border: 2px solid var(--graphite);
+            padding: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .case-study::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--bronze) 0%, var(--gold) 100%);
+        }
+        
+        .case-study-header {
+            margin-bottom: 40px;
+        }
+        
+        .case-study-title {
+            font-size: 2.2rem;
+            color: var(--bronze);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .case-study-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .stat {
+            text-align: center;
+            padding: 20px;
+            background: rgba(184, 134, 11, 0.1);
+            border-radius: 8px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: var(--stone-beige);
+            font-size: 1rem;
+        }
+        
+        .case-study-section {
+            margin-bottom: 35px;
+        }
+        
+        .case-study-section h4 {
+            font-size: 1.4rem;
+            color: var(--bronze);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .case-study-section p, .case-study-section ul {
+            color: var(--stone-beige);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .case-study-section ul {
+            list-style-position: inside;
+            margin-top: 15px;
+        }
+        
+        .case-study-section li {
+            margin-bottom: 10px;
+            padding-left: 20px;
         }
         
         .quote-section {
             padding: 120px 40px;
-            background: radial-gradient(ellipse at center, rgba(61, 40, 23, 0.2) 0%, var(--obsidian) 70%);
-            border-top: 1px solid rgba(212, 175, 55, 0.15);
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            border-top: 3px solid var(--bronze);
         }
         
         .quote-section h2 {
-            font-family: 'Cormorant Garamond', serif;
             text-align: center;
-            font-size: 3rem;
-            margin-bottom: 60px;
-            color: var(--bone-white);
-            font-weight: 300;
-            letter-spacing: 2px;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--bone-white) 0%, var(--bronze) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .discount-banner {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 70px auto;
+            padding: 25px 40px;
+            background: linear-gradient(135deg, var(--bronze) 0%, var(--gold) 100%);
+            color: var(--obsidian);
+            font-size: 1.3rem;
+            font-weight: 700;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(184, 134, 11, 0.4);
         }
         
         .quote-form {
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
-            background: rgba(212, 197, 176, 0.03);
-            padding: 60px 50px;
-            border: 1px solid rgba(184, 134, 11, 0.2);
-            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #1a1a1a 0%, #242424 100%);
+            padding: 70px;
+            border: 2px solid var(--graphite);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
         }
         
-        .form-group { margin-bottom: 25px; }
+        .form-group {
+            margin-bottom: 35px;
+        }
         
         .form-group label {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            font-weight: 700;
             color: var(--bronze);
-            font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 1rem;
+            letter-spacing: 1px;
         }
         
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 15px;
-            background: rgba(10, 10, 10, 0.5);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            color: var(--cream);
-            font-size: 1rem;
-            font-family: 'Montserrat', sans-serif;
+            padding: 18px;
+            background: #0a0a0a;
+            border: 2px solid var(--graphite);
+            color: var(--bone-white);
+            font-size: 1.05rem;
+            transition: all 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--bronze);
+            box-shadow: 0 0 20px rgba(184, 134, 11, 0.3);
         }
         
         .form-group textarea {
-            min-height: 150px;
             resize: vertical;
+            min-height: 180px;
+            font-family: inherit;
         }
         
         .submit-button {
-            width: 100%;
             background: linear-gradient(135deg, var(--bronze) 0%, var(--gold) 100%);
             color: var(--obsidian);
-            padding: 18px;
+            padding: 22px 60px;
             border: none;
-            font-weight: 600;
-            font-size: 1.05rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
+            font-size: 1.2rem;
+            font-weight: 700;
             cursor: pointer;
-            margin-top: 15px;
+            width: 100%;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.4s;
+            box-shadow: 0 10px 40px rgba(184, 134, 11, 0.4);
+        }
+        
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(184, 134, 11, 0.6);
+        }
+        
+        .success-message {
+            display: none;
+            background: linear-gradient(135deg, var(--bronze) 0%, var(--gold) 100%);
+            color: var(--obsidian);
+            padding: 30px;
+            margin-bottom: 35px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            border-radius: 8px;
         }
         
         footer {
-            background: var(--graphite);
-            padding: 60px 40px;
-            text-align: center;
+            background: #0a0a0a;
             color: var(--stone-beige);
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            text-align: center;
+            padding: 60px 40px;
+            border-top: 2px solid var(--bronze);
+        }
+        
+        footer p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
         }
         
         footer a {
             color: var(--bronze);
             text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        footer a:hover {
+            color: var(--gold);
         }
         
         @media (max-width: 1024px) {
             .hero-content {
                 grid-template-columns: 1fr;
+                gap: 50px;
                 text-align: center;
             }
-            .hero h1 { font-size: 3rem; }
+            
+            .hero-logo {
+                margin: 0 auto;
+                width: 240px;
+                height: 240px;
+            }
+            
+            .hero-text {
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero-logo { width: 200px; height: 200px; }
+            nav ul { flex-direction: column; gap: 20px; }
+            .quote-form { padding: 40px 30px; }
+            .case-study { padding: 40px 30px; }
         }
     </style>
 </head>
 <body>
     <nav>
         <ul>
-            <li class="logo">House of Bachaé</li>
+            <li class="logo">HOUSE OF BACHAE</li>
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
+            <li><a href="#case-studies">Case Studies</a></li>
             <li><a href="#quote">Get Quote</a></li>
         </ul>
     </nav>
@@ -317,11 +543,12 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="hero-logo">
-                <img src="logo.png" alt="House of Bachaé Logo">
+                <img src="logo.png" alt="House of Bachae - Digital Strategy | AI-Driven Empowerment">
             </div>
+            
             <div class="hero-text">
                 <h1>Identify Bottlenecks. Automate Solutions. Scale Your Business.</h1>
-                <p class="tagline">Digital Strategy | AI-Driven Empowerment</p>
+                <p class="tagline">AI-Powered Automation Consulting in Minneapolis</p>
                 <a href="#quote" class="cta-button">Request Your Quote</a>
             </div>
         </div>
@@ -332,54 +559,273 @@
         <div class="service-grid">
             <div class="service-card">
                 <h3>Company Bottleneck Audits</h3>
-                <p>We identify exactly where your operations slow down, where resources drain, and where opportunities hide.</p>
+                <p>We identify exactly where your operations slow down, where resources drain, and where opportunities hide. Our comprehensive audits reveal the precise automation solutions your business needs.</p>
             </div>
+            
             <div class="service-card">
                 <h3>Custom Automation Solutions</h3>
-                <p>Every business is unique. We design tailored automation workflows that fit your specific processes and goals.</p>
+                <p>Every business is unique. We design and implement tailored automation workflows that fit your specific processes, tools, and goals—not generic templates.</p>
             </div>
+            
             <div class="service-card">
                 <h3>AI Integration</h3>
-                <p>Leverage cutting-edge AI to handle repetitive tasks and free your team to focus on innovation.</p>
+                <p>Leverage cutting-edge AI to handle repetitive tasks, generate insights, and free your team to focus on innovation and growth.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="case-studies" class="case-studies">
+        <h2>Real Results for Real Businesses</h2>
+        <p class="case-studies-intro">See how we've helped companies eliminate bottlenecks, save time, and scale their operations through intelligent automation.</p>
+        
+        <div class="case-study">
+            <div class="case-study-header">
+                <h3 class="case-study-title">Educational Platform: Automated Student Onboarding</h3>
+            </div>
+            
+            <div class="case-study-stats">
+                <div class="stat">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Automated</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">15hrs</div>
+                    <div class="stat-label">Saved Weekly</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">$6K+</div>
+                    <div class="stat-label">Annual Savings</div>
+                </div>
+            </div>
+            
+            <div class="case-study-section">
+                <h4>The Challenge</h4>
+                <p>An online education company was losing 2.5 hours per week manually onboarding new students. Each enrollment required sending welcome emails, creating CRM entries, following up with students who hadn't activated accounts, and manually escalating issues to the team.</p>
+            </div>
+            
+            <div class="case-study-section">
+                <h4>The Solution</h4>
+                <p>We built a multi-phase automation system that:</p>
+                <ul>
+                    <li>Automatically sends personalized welcome emails upon payment</li>
+                    <li>Creates CRM entries with student information and status tracking</li>
+                    <li>Sends automated follow-up reminders to students who haven't created accounts</li>
+                    <li>Escalates to human support after multiple automated attempts</li>
+                    <li>Generates AI-personalized kickoff emails based on student goals and background</li>
+                </ul>
+            </div>
+            
+            <div class="case-study-section">
+                <h4>The Results</h4>
+                <p>The client eliminated manual onboarding entirely, saving 15+ hours per week and creating a scalable system that improves the student experience while freeing the team to focus on course development and support.</p>
+            </div>
+        </div>
+        
+        <div class="case-study">
+            <div class="case-study-header">
+                <h3 class="case-study-title">Executive Assistant: AI-Powered Productivity System</h3>
+            </div>
+            
+            <div class="case-study-stats">
+                <div class="stat">
+                    <div class="stat-number">10hrs</div>
+                    <div class="stat-label">Saved Weekly</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Tools Integrated</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Availability</div>
+                </div>
+            </div>
+            
+            <div class="case-study-section">
+                <h4>The Challenge</h4>
+                <p>A CEO needed immediate access to critical business information scattered across Gmail, Slack, Notion, and Dropbox. Searching through multiple platforms was costing hours each week and causing important details to slip through the cracks.</p>
+            </div>
+            
+            <div class="case-study-section">
+                <h4>The Solution</h4>
+                <p>We developed an intelligent assistant that:</p>
+                <ul>
+                    <li>Consolidated data from all platforms into a searchable knowledge base</li>
+                    <li>Enabled natural language queries to instantly retrieve information</li>
+                    <li>Automated email management, meeting summaries, and task tracking</li>
+                    <li>Provided web research capabilities with cited sources</li>
+                    <li>Maintained automatic updates as new data was created across platforms</li>
+                </ul>
+            </div>
+            
+            <div class="case-study-section">
+                <h4>The Results</h4>
+                <p>The executive gained back 10+ hours per week previously spent searching for information, while gaining the ability to make faster, more informed decisions with instant access to comprehensive business data.</p>
+            </div>
+        </div>
+        
+        <div class="case-study">
+            <div class="case-study-header">
+                <h3 class="case-study-title">Marketing Agency: Content Research & Generation</h3>
+            </div>
+            
+            <div class="case-study-stats">
+                <div class="stat">
+                    <div class="stat-number">75%</div>
+                    <div class="stat-label">Time Reduction</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">3x</div>
+                    <div class="stat-label">Output Increase</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Quality Checked</div>
+                </div>
+            </div>
+            
+            <div class="case-study-section">
+                <h4>The Challenge</h4>
+                <p>A marketing team spent 15+ hours weekly researching topics, compiling data, and drafting blog posts and LinkedIn content. The manual process created a bottleneck that limited content output and prevented the team from focusing on strategy.</p>
+            </div>
+            
+            <div class="case-study-section">
+                <h4>The Solution</h4>
+                <p>We created an AI-powered content workflow that:</p>
+                <ul>
+                    <li>Automatically researches topics using multiple reliable sources</li>
+                    <li>Generates draft content with proper citations</li>
+                    <li>Implements multi-agent quality checking before human review</li>
+                    <li>Populates drafts into a spreadsheet for team approval</li>
+                    <li>Learns from feedback to continuously improve output quality</li>
+                </ul>
+            </div>
+            
+            <div class="case-study-section">
+                <h4>The Results</h4>
+                <p>The marketing team tripled their content output while reducing research and drafting time by 75%, allowing them to focus on strategy, client relationships, and creative direction.</p>
             </div>
         </div>
     </section>
 
     <section id="quote" class="quote-section">
         <h2>Request Your Free Quote</h2>
+        <div class="discount-banner">
+            🎁 Limited Time: Get 10% OFF your first automation project when you submit this form!
+        </div>
         <div class="quote-form">
+            <div id="success-message" class="success-message">
+                ✓ Thank you! Your 10% discount code has been sent to your email. We'll be in touch within 24 hours to discuss your automation needs.
+            </div>
             <form id="quoteForm">
                 <div class="form-group">
                     <label for="firstName">First Name *</label>
-                    <input type="text" id="firstName" required>
+                    <input type="text" id="firstName" name="firstName" required>
                 </div>
+                
                 <div class="form-group">
                     <label for="lastName">Last Name *</label>
-                    <input type="text" id="lastName" required>
+                    <input type="text" id="lastName" name="lastName" required>
                 </div>
+                
                 <div class="form-group">
                     <label for="email">Email *</label>
-                    <input type="email" id="email" required>
+                    <input type="email" id="email" name="email" required>
                 </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(763) 200-6380" required>
+                </div>
+                
                 <div class="form-group">
                     <label for="company">Company Name *</label>
-                    <input type="text" id="company" required>
+                    <input type="text" id="company" name="company" required>
                 </div>
+                
                 <div class="form-group">
-                    <label for="message">How can we help? *</label>
-                    <textarea id="message" required></textarea>
+                    <label for="industry">Industry *</label>
+                    <select id="industry" name="industry" required>
+                        <option value="">Select your industry...</option>
+                        <option value="technology">Technology/SaaS</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="real-estate">Real Estate</option>
+                        <option value="legal">Legal Services</option>
+                        <option value="ecommerce">E-commerce/Retail</option>
+                        <option value="marketing">Marketing/Agency</option>
+                        <option value="finance">Finance/Accounting</option>
+                        <option value="manufacturing">Manufacturing</option>
+                        <option value="hospitality">Hospitality/Food Service</option>
+                        <option value="construction">Construction</option>
+                        <option value="education">Education</option>
+                        <option value="other">Other</option>
+                    </select>
                 </div>
-                <button type="submit" class="submit-button">Submit Request</button>
+                
+                <div class="form-group" id="otherIndustryGroup" style="display: none;">
+                    <label for="otherIndustry">Please specify:</label>
+                    <input type="text" id="otherIndustry" name="otherIndustry">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">How can I help automate your business? *</label>
+                    <textarea id="message" name="message" required placeholder="Describe your biggest operational challenges, repetitive tasks, or bottlenecks..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-button">Submit & Get 10% Discount</button>
             </form>
         </div>
     </section>
 
     <footer>
-        <p><strong>House of Bachaé</strong></p>
-        <p>Digital Strategy | AI-Driven Empowerment | Minneapolis, Minnesota</p>
+        <p><strong>House of Bachae</strong></p>
+        <p>AI Automation Consulting | Minneapolis, Minnesota</p>
         <p>Email: <a href="mailto:bebe@houseofbachae.com">bebe@houseofbachae.com</a></p>
         <p>Phone: <a href="tel:+17632006380">(763) 200-6380</a></p>
-        <p>&copy; 2026 House of Bachaé. All rights reserved.</p>
+        <p style="margin-top: 30px; color: var(--graphite);">&copy; 2026 House of Bachae. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.getElementById('industry').addEventListener('change', function() {
+            const otherGroup = document.getElementById('otherIndustryGroup');
+            otherGroup.style.display = this.value === 'other' ? 'block' : 'none';
+        });
+
+        document.getElementById('quoteForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                company: document.getElementById('company').value,
+                industry: document.getElementById('industry').value,
+                otherIndustry: document.getElementById('otherIndustry').value,
+                message: document.getElementById('message').value,
+                timestamp: new Date().toISOString(),
+                discount: '10% off first project'
+            };
+            
+            try {
+                const response = await fetch('http://localhost:5678/webhook/quote-request', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+                
+                if (response.ok) {
+                    document.getElementById('success-message').style.display = 'block';
+                    document.getElementById('quoteForm').reset();
+                    document.getElementById('success-message').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    setTimeout(() => {
+                        document.getElementById('success-message').style.display = 'none';
+                    }, 10000);
+                }
+            } catch (error) {
+                alert('Error submitting form. Please email us directly at bebe@houseofbachae.com for your 10% discount code!');
+            }
+        });
+    </script>
 </body>
 </html>
