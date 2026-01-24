@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House of Bachaé - Digital Strategy | AI-Driven Empowerment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --obsidian: #0a0a0a;
+            --dark-brown: #3d2817;
+            --bone-white: #f5f5f0;
+            --cream: #ede7d9;
+            --bronze: #b8860b;
+            --gold: #d4af37;
+            --warm-brown: #5a3e2b;
+            --graphite: #2a2a2a;
+            --stone-beige: #d4c5b0;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.7;
+            color: var(--cream);
+            background: var(--obsidian);
+        }
+        
+        nav {
+            background: rgba(10, 10, 10, 0.98);
+            padding: 25px 50px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--cream);
+            font-weight: 400;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--bronze);
+            transition: width 0.3s;
+        }
+        
+        nav a:hover::after { width: 100%; }
+        nav a:hover { color: var(--bronze); }
+        
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: var(--bronze);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+        
+        .hero {
+            padding: 100px 40px 150px 40px;
+            position: relative;
+            background: radial-gradient(ellipse at left, rgba(61, 40, 23, 0.3) 0%, var(--obsidian) 50%);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(184, 134, 11, 0.08) 0%, transparent 50%);
+        }
+        
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-logo {
+            width: 350px;
+            height: 350px;
+            position: relative;
+            border-radius: 50%;
+            padding: 30px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, rgba(184, 134, 11, 0.15) 30%, transparent 70%);
+            box-shadow: 0 0 60px rgba(212, 175, 55, 0.3), 0 0 120px rgba(184, 134, 11, 0.2);
+        }
+        
+        .hero-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: brightness(1.15) contrast(1.05);
+            border-radius: 50%;
+        }
+        
+        .hero-text { text-align: left; }
+        
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4.2rem;
+            margin-bottom: 30px;
+            font-weight: 400;
+            line-height: 1.15;
+            color: var(--bone-white);
+            letter-spacing: 0.5px;
+        }
+        
+        .hero .tagline {
+            font-size: 1.3rem;
+            margin-bottom: 60px;
+            color: var(--bronze);
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, var(--bronze) 0%, var(--gold) 100%);
+            color: var(--obsidian);
+            padding: 18px 50px;
+            font-size: 1rem;
+            border: none;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            letter-spacing: 1.5px;
+            transition: all 0.4s;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 8px 30px rgba(184, 134, 11, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(184, 134, 11, 0.35);
+        }
+        
+        .services {
+            padding: 120px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .services h2 {
+            font-family: 'Cormorant Garamond', serif;
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 80px;
+            font-weight: 300;
+            color: var(--bone-white);
+            letter-spacing: 2px;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 50px;
+        }
+        
+        .service-card {
+            background: rgba(212, 197, 176, 0.03);
+            padding: 50px 40px;
+            border: 1px solid rgba(184, 134, 11, 0.15);
+            transition: all 0.4s;
+        }
+        
+        .service-card:hover {
+            border-color: rgba(184, 134, 11, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .service-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--bronze);
+            font-weight: 400;
+        }
+        
+        .quote-section {
+            padding: 120px 40px;
+            background: radial-gradient(ellipse at center, rgba(61, 40, 23, 0.2) 0%, var(--obsidian) 70%);
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        
+        .quote-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 60px;
+            color: var(--bone-white);
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        .quote-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(212, 197, 176, 0.03);
+            padding: 60px 50px;
+            border: 1px solid rgba(184, 134, 11, 0.2);
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        .form-group { margin-bottom: 25px; }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--bronze);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(10, 10, 10, 0.5);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            color: var(--cream);
+            font-size: 1rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-button {
+            width: 100%;
+            background: linear-gradient(135deg, var(--bronze) 0%, var(--gold) 100%);
+            color: var(--obsidian);
+            padding: 18px;
+            border: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        
+        footer {
+            background: var(--graphite);
+            padding: 60px 40px;
+            text-align: center;
+            color: var(--stone-beige);
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        footer a {
+            color: var(--bronze);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero h1 { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="logo">House of Bachaé</li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#quote">Get Quote</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="logo.png" alt="House of Bachaé Logo">
+            </div>
+            <div class="hero-text">
+                <h1>Identify Bottlenecks. Automate Solutions. Scale Your Business.</h1>
+                <p class="tagline">Digital Strategy | AI-Driven Empowerment</p>
+                <a href="#quote" class="cta-button">Request Your Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2>How We Help</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>Company Bottleneck Audits</h3>
+                <p>We identify exactly where your operations slow down, where resources drain, and where opportunities hide.</p>
+            </div>
+            <div class="service-card">
+                <h3>Custom Automation Solutions</h3>
+                <p>Every business is unique. We design tailored automation workflows that fit your specific processes and goals.</p>
+            </div>
+            <div class="service-card">
+                <h3>AI Integration</h3>
+                <p>Leverage cutting-edge AI to handle repetitive tasks and free your team to focus on innovation.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="quote" class="quote-section">
+        <h2>Request Your Free Quote</h2>
+        <div class="quote-form">
+            <form id="quoteForm">
+                <div class="form-group">
+                    <label for="firstName">First Name *</label>
+                    <input type="text" id="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name *</label>
+                    <input type="text" id="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Company Name *</label>
+                    <input type="text" id="company" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">How can we help? *</label>
+                    <textarea id="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Submit Request</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>House of Bachaé</strong></p>
+        <p>Digital Strategy | AI-Driven Empowerment | Minneapolis, Minnesota</p>
+        <p>Email: <a href="mailto:bebe@houseofbachae.com">bebe@houseofbachae.com</a></p>
+        <p>Phone: <a href="tel:+17632006380">(763) 200-6380</a></p>
+        <p>&copy; 2026 House of Bachaé. All rights reserved.</p>
+    </footer>
+</body>
+</html>
