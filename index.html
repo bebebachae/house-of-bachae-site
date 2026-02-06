@@ -121,10 +121,11 @@
             border-radius: 8px;
         }
         
-        .hero-logo img {
+        c.hero-logo img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
+	    border-radius: 50%;
             filter: brightness(1.1) drop-shadow(0 0 30px rgba(184, 134, 11, 0.3));
         }
         
@@ -808,7 +809,7 @@
             };
             
             try {
-                const response = await fetch('http://localhost:5678/webhook/quote-request', {
+                const response = await fetch('https://n8n.houseofbachae.com/webhook/quote-request', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(formData)
