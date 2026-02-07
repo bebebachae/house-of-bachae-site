@@ -121,7 +121,7 @@
             border-radius: 8px;
         }
         
-        c.hero-logo img {
+        .hero-logo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -522,11 +522,42 @@
         }
         
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .hero-logo { width: 200px; height: 200px; }
-            nav ul { flex-direction: column; gap: 20px; }
-            .quote-form { padding: 40px 30px; }
-            .case-study { padding: 40px 30px; }
+            nav { padding: 15px 20px; }
+            nav ul { flex-direction: column; gap: 12px; }
+            .logo { font-size: 1.2rem; }
+
+            .hero { padding: 60px 20px 80px 20px; }
+            .hero h1 { font-size: 2rem; }
+            .hero .tagline { font-size: 1.2rem; margin-bottom: 35px; }
+            .hero-logo { width: 180px; height: 180px; }
+
+            .cta-button { padding: 16px 30px; font-size: 1rem; letter-spacing: 1px; }
+
+            .services { padding: 60px 20px; }
+            .services h2,
+            .case-studies h2,
+            .quote-section h2 { font-size: 2rem; margin-bottom: 40px; }
+
+            .service-grid { grid-template-columns: 1fr; gap: 30px; }
+            .service-card { padding: 35px 25px; }
+            .service-card:hover { transform: translateX(5px) translateY(-3px); }
+
+            .case-studies { padding: 60px 20px; }
+            .case-studies-intro { font-size: 1rem; margin-bottom: 40px; }
+            .case-study { padding: 30px 20px; }
+            .case-study-title { font-size: 1.5rem; }
+            .case-study-stats { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+            .stat { padding: 12px 8px; }
+            .stat-number { font-size: 1.6rem; }
+            .stat-label { font-size: 0.8rem; }
+            .case-study-section h4 { font-size: 1.2rem; }
+            .case-study-section p,
+            .case-study-section ul { font-size: 1rem; }
+
+            .quote-section { padding: 60px 20px; }
+            .discount-banner { font-size: 1rem; padding: 18px 20px; margin-bottom: 40px; }
+            .quote-form { padding: 30px 20px; }
+            .submit-button { padding: 18px 20px; font-size: 1rem; letter-spacing: 1px; }
         }
     </style>
 </head>
