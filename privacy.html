@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | House of Bachae - AI Automation Consulting</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --obsidian: #0a0a0a;
+            --dark-brown: #3d2817;
+            --bone-white: #f5f5f0;
+            --bronze: #b8860b;
+            --gold: #d4af37;
+            --warm-brown: #5a3e2b;
+            --graphite: #4a4a4a;
+            --stone-beige: #d4c5b0;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--bone-white);
+            background: var(--obsidian);
+        }
+        nav {
+            background: rgba(10, 10, 10, 0.98);
+            padding: 25px 50px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--bronze);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--bone-white);
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            position: relative;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--bronze);
+            transition: width 0.3s;
+        }
+        nav a:hover::after { width: 100%; }
+        nav a:hover { color: var(--gold); }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--bronze) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+        }
+        .logo a {
+            background: linear-gradient(135deg, var(--bronze) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .logo a::after { display: none; }
+        .nav-cta {
+            background: linear-gradient(135deg, var(--bronze) 0%, var(--gold) 100%);
+            -webkit-background-clip: initial;
+            -webkit-text-fill-color: initial;
+            color: var(--obsidian) !important;
+            padding: 10px 24px;
+            font-weight: 700 !important;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover {
+            color: var(--obsidian) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(184, 134, 11, 0.5);
+        }
+        .page-header {
+            padding: 80px 40px 60px;
+            text-align: center;
+            background: radial-gradient(ellipse at left, var(--dark-brown) 0%, var(--obsidian) 50%);
+            border-bottom: 3px solid var(--bronze);
+        }
+        .page-header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--bone-white) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+        .page-header p {
+            color: var(--stone-beige);
+            font-size: 1.1rem;
+        }
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+        .content h2 {
+            font-size: 1.8rem;
+            color: var(--bronze);
+            margin: 50px 0 20px;
+            font-weight: 700;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--graphite);
+        }
+        .content h2:first-of-type { margin-top: 0; }
+        .content h3 {
+            font-size: 1.3rem;
+            color: var(--gold);
+            margin: 25px 0 12px;
+            font-weight: 600;
+        }
+        .content p {
+            color: var(--stone-beige);
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        .content ul, .content ol {
+            color: var(--stone-beige);
+            margin: 10px 0 20px 25px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        .content li { margin-bottom: 8px; }
+        .content strong { color: var(--bone-white); }
+        .content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .content th {
+            background: rgba(184, 134, 11, 0.15);
+            color: var(--bronze);
+            padding: 14px 18px;
+            text-align: left;
+            font-weight: 700;
+            border-bottom: 2px solid var(--bronze);
+        }
+        .content td {
+            padding: 14px 18px;
+            border-bottom: 1px solid var(--graphite);
+            color: var(--stone-beige);
+        }
+        .contact-box {
+            background: linear-gradient(135deg, #1a1a1a 0%, #242424 100%);
+            padding: 40px;
+            border-left: 4px solid var(--bronze);
+            margin-top: 40px;
+        }
+        .contact-box p {
+            margin-bottom: 8px;
+        }
+        .contact-box a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+        .contact-box a:hover { color: var(--bronze); }
+        footer {
+            background: #0a0a0a;
+            color: var(--stone-beige);
+            text-align: center;
+            padding: 60px 40px;
+            border-top: 2px solid var(--bronze);
+        }
+        footer p { margin-bottom: 15px; font-size: 1.05rem; }
+        footer a {
+            color: var(--bronze);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        footer a:hover { color: var(--gold); }
+        .footer-links {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .footer-links a {
+            margin: 0 15px;
+            font-size: 0.95rem;
+        }
+        @media (max-width: 768px) {
+            nav { padding: 15px 20px; }
+            nav ul { flex-direction: column; gap: 12px; }
+            .logo { font-size: 1.2rem; }
+            .page-header { padding: 50px 20px 40px; }
+            .page-header h1 { font-size: 2rem; }
+            .content { padding: 40px 20px; }
+            .content h2 { font-size: 1.4rem; }
+            .contact-box { padding: 25px 20px; }
+            .nav-cta { padding: 8px 18px; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="logo"><a href="/">HOUSE OF BACHAE</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/portfolio.html">Our Work</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/#book" class="nav-cta">Book a Call</a></li>
+            <li><a href="/#quote">Get Quote</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-header">
+        <h1>Privacy Policy</h1>
+        <p>Last Updated: February 2026</p>
+    </div>
+
+    <div class="content">
+        <h2>1. Introduction</h2>
+        <p>House of Bachae LLC ("Company," "we," "us," or "our") respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website at houseofbachae.com (the "Website") or engage with our services.</p>
+        <p>By using the Website or providing your information to us, you consent to the practices described in this Privacy Policy. If you do not agree with this Privacy Policy, please do not access the Website.</p>
+
+        <h2>2. Information We Collect</h2>
+        <h3>(a) Information You Provide Directly</h3>
+        <ul>
+            <li>Contact information (name, email address, phone number, company name) submitted through our quote request form, contact form, or scheduling tools.</li>
+            <li>Project details and business information shared during discovery calls or consultations.</li>
+            <li>Communication records including emails, messages, and call notes.</li>
+            <li>Payment information processed through third-party payment processors (we do not store credit card numbers).</li>
+        </ul>
+        <h3>(b) Information Collected Automatically</h3>
+        <ul>
+            <li>Device information (browser type, operating system, device type).</li>
+            <li>IP address and approximate geographic location.</li>
+            <li>Website usage data (pages visited, time spent, referring URLs).</li>
+            <li>Cookies and similar tracking technologies as described in Section 7.</li>
+        </ul>
+        <h3>(c) Information from Third Parties</h3>
+        <ul>
+            <li>Information from scheduling platforms (Cal.com) when you book appointments.</li>
+            <li>Analytics data from website analytics providers.</li>
+            <li>Public business information from LinkedIn or other professional networks if you connect with us there.</li>
+        </ul>
+
+        <h2>3. How We Use Your Information</h2>
+        <table>
+            <tr><th>Purpose</th><th>Examples</th></tr>
+            <tr><td><strong>Service Delivery</strong></td><td>Responding to inquiries, preparing proposals, delivering consulting services, providing support</td></tr>
+            <tr><td><strong>Communication</strong></td><td>Sending project updates, invoices, newsletters (with consent), and service-related notifications</td></tr>
+            <tr><td><strong>Website Improvement</strong></td><td>Analyzing usage patterns, improving site performance, enhancing user experience</td></tr>
+            <tr><td><strong>Marketing</strong></td><td>Sending promotional content (with consent), retargeting, case study development (with permission)</td></tr>
+            <tr><td><strong>Legal Compliance</strong></td><td>Fulfilling legal obligations, responding to lawful requests, protecting our rights</td></tr>
+            <tr><td><strong>Security</strong></td><td>Detecting and preventing fraud, unauthorized access, and other malicious activity</td></tr>
+        </table>
+
+        <h2>4. Information Sharing and Disclosure</h2>
+        <p>We do not sell, rent, or trade your personal information. We may share your information in the following limited circumstances:</p>
+        <p><strong>(a) Service Providers:</strong> We share information with trusted third-party service providers who assist us in operating our business (e.g., payment processors, email services, analytics providers, scheduling platforms). These providers are contractually obligated to protect your information and use it only for the purposes we specify.</p>
+        <p><strong>(b) Legal Requirements:</strong> We may disclose information when required by law, regulation, legal process, or governmental request, or when we believe disclosure is necessary to protect our rights, safety, or property.</p>
+        <p><strong>(c) Business Transfers:</strong> In the event of a merger, acquisition, or sale of assets, your information may be transferred as part of the transaction. We will notify you of any such transfer.</p>
+        <p><strong>(d) With Your Consent:</strong> We may share information when you explicitly authorize us to do so.</p>
+
+        <h2>5. Data Retention</h2>
+        <p>We retain your information for as long as necessary to fulfill the purposes described in this Privacy Policy, unless a longer retention period is required by law. Specifically:</p>
+        <ul>
+            <li><strong>Website inquiry data:</strong> Retained for two (2) years from the date of submission, or until you request deletion.</li>
+            <li><strong>Client project data:</strong> Retained for seven (7) years from project completion for tax and legal compliance purposes.</li>
+            <li><strong>Marketing communications data:</strong> Retained until you unsubscribe or request removal.</li>
+            <li><strong>Analytics data:</strong> Retained in aggregated, anonymized form indefinitely.</li>
+        </ul>
+
+        <h2>6. Data Security</h2>
+        <p>We implement reasonable administrative, technical, and physical safeguards to protect your information, including:</p>
+        <ul>
+            <li>Encryption of data in transit (HTTPS/TLS)</li>
+            <li>Secure credential management practices</li>
+            <li>Access controls limiting who can view personal information</li>
+            <li>Regular review of security practices</li>
+            <li>Secure third-party service providers</li>
+        </ul>
+        <p>No method of transmission over the internet or electronic storage is completely secure. While we strive to protect your information, we cannot guarantee absolute security.</p>
+
+        <h2>7. Cookies and Tracking</h2>
+        <p>The Website may use cookies and similar technologies to enhance your experience. Types of cookies we may use:</p>
+        <ul>
+            <li><strong>Essential Cookies:</strong> Required for basic Website functionality (e.g., session management, security). These cannot be disabled.</li>
+            <li><strong>Analytics Cookies:</strong> Help us understand how visitors interact with the Website (e.g., Google Analytics, Fathom Analytics). These collect anonymized usage data.</li>
+            <li><strong>Functional Cookies:</strong> Remember your preferences and settings for a better experience.</li>
+        </ul>
+        <p>You can control cookies through your browser settings. Disabling certain cookies may affect Website functionality.</p>
+
+        <h2>8. Your Rights</h2>
+        <p>Depending on your location, you may have the following rights regarding your personal information:</p>
+        <ul>
+            <li><strong>Access:</strong> Request a copy of the personal information we hold about you.</li>
+            <li><strong>Correction:</strong> Request correction of inaccurate or incomplete information.</li>
+            <li><strong>Deletion:</strong> Request deletion of your personal information, subject to legal retention requirements.</li>
+            <li><strong>Opt-Out:</strong> Unsubscribe from marketing communications at any time using the unsubscribe link in our emails or by contacting us directly.</li>
+            <li><strong>Data Portability:</strong> Request your data in a commonly used, machine-readable format.</li>
+            <li><strong>Restriction:</strong> Request that we limit processing of your information in certain circumstances.</li>
+        </ul>
+        <p>To exercise any of these rights, contact us using the information in Section 14. We will respond to requests within thirty (30) days.</p>
+
+        <h2>9. Minnesota Privacy Rights</h2>
+        <p>Minnesota residents may have additional rights under the Minnesota Consumer Data Privacy Act (MCDPA) or other applicable state privacy laws. If you are a Minnesota resident and wish to exercise your privacy rights, please contact us using the information in Section 14.</p>
+
+        <h2>10. California Privacy Rights</h2>
+        <p>If you are a California resident, you may have additional rights under the California Consumer Privacy Act (CCPA), including the right to know what personal information we collect and how it is used, the right to request deletion, and the right to opt out of the sale of personal information. We do not sell personal information. To exercise your rights, contact us using the information in Section 14.</p>
+
+        <h2>11. Children's Privacy</h2>
+        <p>The Website is not directed to individuals under the age of 16. We do not knowingly collect personal information from children under 16. If we learn that we have collected information from a child under 16, we will take steps to delete that information promptly.</p>
+
+        <h2>12. Third-Party Links</h2>
+        <p>The Website may contain links to third-party websites and services. This Privacy Policy does not apply to third-party sites. We encourage you to review the privacy policies of any third-party sites you visit.</p>
+
+        <h2>13. Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated "Last Updated" date. Material changes may be communicated through a notice on the Website or via email. Your continued use of the Website after changes constitutes acceptance of the updated Privacy Policy.</p>
+
+        <h2>14. Contact Us</h2>
+        <p>If you have questions about this Privacy Policy or wish to exercise your privacy rights, please contact us:</p>
+        <div class="contact-box">
+            <p><strong>House of Bachae LLC</strong></p>
+            <p>Minneapolis, Minnesota</p>
+            <p>Phone: <a href="tel:+17632006380">(763) 200-6380</a></p>
+            <p>Email: <a href="mailto:bebe@houseofbachae.com">bebe@houseofbachae.com</a></p>
+            <p>Website: <a href="https://houseofbachae.com">houseofbachae.com</a></p>
+            <p style="margin-top: 15px; font-style: italic;">For privacy-related requests, please include "Privacy Request" in the subject line of your communication.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>House of Bachae</strong></p>
+        <p>AI Automation Consulting | Minneapolis, Minnesota</p>
+        <p>Email: <a href="mailto:bebe@houseofbachae.com">bebe@houseofbachae.com</a></p>
+        <p>Phone: <a href="tel:+17632006380">(763) 200-6380</a></p>
+        <div class="footer-links">
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/tos.html">Terms of Service</a>
+            <a href="/faq.html">FAQ</a>
+            <a href="/portfolio.html">Our Work</a>
+            <a href="/about.html">About</a>
+        </div>
+        <p style="margin-top: 30px; color: var(--graphite);">&copy; 2026 House of Bachae. All rights reserved.</p>
+    </footer>
+</body>
+</html>

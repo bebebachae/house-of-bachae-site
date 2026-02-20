@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | House of Bachae - AI Automation Consulting</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --obsidian: #0a0a0a;
+            --dark-brown: #3d2817;
+            --bone-white: #f5f5f0;
+            --bronze: #b8860b;
+            --gold: #d4af37;
+            --warm-brown: #5a3e2b;
+            --graphite: #4a4a4a;
+            --stone-beige: #d4c5b0;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--bone-white);
+            background: var(--obsidian);
+        }
+        nav {
+            background: rgba(10, 10, 10, 0.98);
+            padding: 25px 50px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--bronze);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--bone-white);
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            position: relative;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--bronze);
+            transition: width 0.3s;
+        }
+        nav a:hover::after { width: 100%; }
+        nav a:hover { color: var(--gold); }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--bronze) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+        }
+        .logo a {
+            background: linear-gradient(135deg, var(--bronze) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .logo a::after { display: none; }
+        .nav-cta {
+            background: linear-gradient(135deg, var(--bronze) 0%, var(--gold) 100%);
+            -webkit-background-clip: initial;
+            -webkit-text-fill-color: initial;
+            color: var(--obsidian) !important;
+            padding: 10px 24px;
+            font-weight: 700 !important;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover {
+            color: var(--obsidian) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(184, 134, 11, 0.5);
+        }
+        .page-header {
+            padding: 80px 40px 60px;
+            text-align: center;
+            background: radial-gradient(ellipse at left, var(--dark-brown) 0%, var(--obsidian) 50%);
+            border-bottom: 3px solid var(--bronze);
+        }
+        .page-header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--bone-white) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+        .page-header p {
+            color: var(--stone-beige);
+            font-size: 1.1rem;
+        }
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+        .faq-category {
+            margin-bottom: 50px;
+        }
+        .faq-category h2 {
+            font-size: 1.8rem;
+            color: var(--bronze);
+            margin-bottom: 25px;
+            font-weight: 700;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--graphite);
+        }
+        .faq-item {
+            margin-bottom: 12px;
+            border: 1px solid var(--graphite);
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+        .faq-item:hover {
+            border-color: var(--bronze);
+        }
+        .faq-question {
+            width: 100%;
+            background: rgba(26, 26, 26, 0.8);
+            color: var(--bone-white);
+            padding: 20px 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: left;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: inherit;
+            line-height: 1.5;
+            transition: background 0.3s;
+        }
+        .faq-question:hover {
+            background: rgba(40, 40, 40, 0.9);
+        }
+        .faq-question .arrow {
+            color: var(--bronze);
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+            margin-left: 15px;
+        }
+        .faq-item.active .faq-question .arrow {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            background: rgba(15, 15, 15, 0.6);
+        }
+        .faq-item.active .faq-answer {
+            max-height: 600px;
+            padding: 20px 25px 25px;
+        }
+        .faq-answer p {
+            color: var(--stone-beige);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+        .faq-answer p:last-child { margin-bottom: 0; }
+        .faq-answer ul, .faq-answer ol {
+            color: var(--stone-beige);
+            margin: 10px 0 10px 25px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        .faq-answer li { margin-bottom: 6px; }
+        .faq-answer strong { color: var(--bone-white); }
+        .faq-answer a { color: var(--gold); text-decoration: none; }
+        .faq-answer a:hover { color: var(--bronze); }
+        .cta-section {
+            text-align: center;
+            padding: 60px 40px;
+            background: radial-gradient(ellipse at right, var(--dark-brown) 0%, var(--obsidian) 50%);
+            border-top: 1px solid var(--graphite);
+        }
+        .cta-section h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--bone-white) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+        .cta-section p {
+            color: var(--stone-beige);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--bronze) 0%, var(--gold) 100%);
+            color: var(--obsidian);
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(184, 134, 11, 0.5);
+        }
+        footer {
+            background: #0a0a0a;
+            color: var(--stone-beige);
+            text-align: center;
+            padding: 60px 40px;
+            border-top: 2px solid var(--bronze);
+        }
+        footer p { margin-bottom: 15px; font-size: 1.05rem; }
+        footer a { color: var(--bronze); text-decoration: none; transition: color 0.3s; }
+        footer a:hover { color: var(--gold); }
+        .footer-links { margin-top: 20px; margin-bottom: 20px; }
+        .footer-links a { margin: 0 15px; font-size: 0.95rem; }
+        @media (max-width: 768px) {
+            nav { padding: 15px 20px; }
+            nav ul { flex-direction: column; gap: 12px; }
+            .logo { font-size: 1.2rem; }
+            .page-header { padding: 50px 20px 40px; }
+            .page-header h1 { font-size: 2rem; }
+            .content { padding: 40px 20px; }
+            .faq-category h2 { font-size: 1.4rem; }
+            .faq-question { padding: 16px 18px; font-size: 1rem; }
+            .cta-section { padding: 40px 20px; }
+            .cta-section h2 { font-size: 1.6rem; }
+            .nav-cta { padding: 8px 18px; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="logo"><a href="/">HOUSE OF BACHAE</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/portfolio.html">Our Work</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/#book" class="nav-cta">Book a Call</a></li>
+            <li><a href="/#quote">Get Quote</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-header">
+        <h1>Frequently Asked Questions</h1>
+        <p>Everything you need to know about working with us</p>
+    </div>
+
+    <div class="content">
+
+        <!-- GENERAL -->
+        <div class="faq-category">
+            <h2>General</h2>
+
+            <div class="faq-item">
+                <button class="faq-question">What does House of Bachae do?<span class="arrow">&#9660;</span></button>
+                <div class="faq-answer">
+                    <p>We design, build, and deploy custom AI-powered automation systems for businesses. Instead of your team spending hours on repetitive tasks like data entry, follow-ups, or report generation, we build intelligent workflows that handle it automatically — 24/7, with no mistakes.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">What kind of businesses do you work with?<span class="arrow">&#9660;</span></button>
+                <div class="faq-answer">
+                    <p>We work with small to mid-sized businesses across many industries, including real estate, insurance, recruiting, marketing agencies, law firms, healthcare, accounting, e-commerce, property management, and home services. If your team does repetitive work that follows a pattern, we can probably automate it.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">What is workflow automation?<span class="arrow">&#9660;</span></button>
+                <div class="faq-answer">
+                    <p>Workflow automation means connecting your existing business tools (email, CRM, spreadsheets, etc.) so they work together automatically. Instead of manually copying data between systems or sending follow-up emails by hand, an automated workflow does it for you — triggered by events like a new form submission, a calendar booking, or an incoming email.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">What is AI automation specifically?<span class="arrow">&#9660;</span></button>
+                <div class="faq-answer">
+                    <p>AI automation adds artificial intelligence to your workflows. This means the system can do things that normally require human judgment — like reading an email and deciding how to respond, scoring a lead based on their information, summarizing a meeting transcript, or categorizing incoming requests. It's like having a smart assistant built into your business processes.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROCESS -->
+        <div class="faq-category">
+            <h2>Process</h2>
+
+            <div class="faq-item">
+                <button class="faq-question">How does a project work?<span class="arrow">&#9660;</span></button>
+                <div class="faq-answer">
+                    <p>Every project follows our RAPID process:</p>
+                    <ol>
+                        <li><strong>Research</strong> — We start with a 30-minute discovery call to understand your business and pain points</li>
+                        <li><strong>Analyze</strong> — We map your current process and calculate the ROI of automating it</li>
+                        <li><strong>Propose</strong> — You receive a custom proposal within 24-48 hours with scope, timeline, and investment</li>
+                        <li><strong>Implement</strong> — We build, test, and refine with weekly updates (you'll always know where things stand)</li>
+                        <li><strong>Deliver</strong> — You receive everything: working system, documentation, training video, and warranty</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">How long does a project take?<span class="arrow">&#9660;</span></button>
+                <div class="faq-answer">
+                    <p>It depends on complexity:</p>
+                    <ul>
+                        <li><strong>Ready-Made Solutions:</strong> 5-7 business days</li>
+                        <li><strong>Multi-system integrations:</strong> 2-3 weeks</li>
+                        <li><strong>Complex systems:</strong> 4-6 weeks</li>
+                        <li><strong>Enterprise projects:</strong> 6-10+ weeks</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">How much does it cost?<span class="arrow">&#9660;</span></button>
+                <div class="faq-answer">
+                    <p>We offer ready-made automation packages starting at $3,497 for common business bottlenecks, as well as fully custom solutions:</p>
+                    <ul>
+                        <li><strong>Ready-Made Packages:</strong> $3,497 - $4,997 — pre-designed systems for common bottlenecks</li>
+                        <li><strong>Custom Projects:</strong> $10,000 - $18,000 — multi-system integrations with AI (most common)</li>
+                        <li><strong>Advanced Systems:</strong> $20,000 - $35,000 — multi-department automation</li>
+                        <li><strong>Enterprise:</strong> $50,000+ — full-scale automation ecosystems</li>
+                    </ul>
+                    <p>Every project gets a custom proposal after the discovery call. No surprises.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">What do I need to provide?<span class="arrow">&#9660;</span></button>
+                <div class="faq-answer">
+                    <p>During the kickoff, we'll need:</p>
+                    <ul>
+                        <li>Access to the tools/software you want to connect</li>
+                        <li>Sample data to test with (can be anonymized)</li>
+                        <li>A point of contact who can answer questions and approve deliverables</li>
+                        <li>Feedback within 2 business days when we share progress</li>
+                    </ul>
+                    <p>We guide you through everything — no technical knowledge required.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TECHNICAL -->
+        <div class="faq-category">
+            <h2>Technical</h2>
+
+            <div class="faq-item">
+                <button class="faq-question">What tools do you use to build automations?<span class="arrow">&#9660;</span></button>
+                <div class="faq-answer">
+                    <p>We primarily use <strong>n8n</strong>, a powerful workflow automation platform. Think of it as the brain that connects all your other tools together. We also integrate with AI models from OpenAI, Anthropic (Claude), and Google (Gemini) for intelligent processing.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Will my automations break if a tool updates?<span class="arrow">&#9660;</span></button>
+                <div class="faq-answer">
+                    <p>Software tools update their features and connections (APIs) from time to time. Our workflows include error handling — if something breaks, the system notifies you immediately instead of failing silently. During your warranty period, we fix any issues caused by tool updates at no extra charge. After that, our retainer service covers ongoing maintenance.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Where does my data live?<span class="arrow">&#9660;</span></button>
+                <div class="faq-answer">
+                    <p>Your automations run on YOUR systems — not ours. We build everything on your accounts, so you have full control of your data at all times. We never store your business data on our servers.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Do I need technical skills to use the automations?<span class="arrow">&#9660;</span></button>
+                <div class="faq-answer">
+                    <p>No. We design everything to run automatically. You'll receive a training video that walks through how to monitor the system and handle common situations. For day-to-day operations, the system works in the background with no action needed from you.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Can I modify the automations after delivery?<span class="arrow">&#9660;</span></button>
+                <div class="faq-answer">
+                    <p>Yes — you own everything we build. We deliver all source files and documentation. However, we recommend contacting us before making major changes, as modifications can sometimes cause unexpected issues.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAYMENT & LEGAL -->
+        <div class="faq-category">
+            <h2>Payment & Legal</h2>
+
+            <div class="faq-item">
+                <button class="faq-question">How does payment work?<span class="arrow">&#9660;</span></button>
+                <div class="faq-answer">
+                    <p><strong>Satisfaction guaranteed.</strong> Here's how it works:</p>
+                    <ul>
+                        <li><strong>50% deposit</strong> when the project starts — secures your spot, work begins immediately</li>
+                        <li><strong>50% upon your acceptance</strong> — you test the system with your real data before paying the rest</li>
+                        <li>If it works as described, you pay the final 50%</li>
+                        <li>If it doesn't work, we fix it at no charge</li>
+                        <li><strong>If we can't make it work, full refund</strong></li>
+                    </ul>
+                    <p><strong>Early payment discount:</strong> Pay 100% upfront and receive 10% off.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">What if I need to cancel?<span class="arrow">&#9660;</span></button>
+                <div class="faq-answer">
+                    <p>We have a clear cancellation policy:</p>
+                    <ul>
+                        <li><strong>Before work starts:</strong> Full refund minus $500 administrative fee</li>
+                        <li><strong>Less than 50% complete:</strong> You owe 50% of the project total</li>
+                        <li><strong>50% or more complete:</strong> You owe 100% of the project total</li>
+                        <li><strong>After delivery:</strong> No refunds (issues covered by warranty)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">What's included in the warranty?<span class="arrow">&#9660;</span></button>
+                <div class="faq-answer">
+                    <p>Every project comes with a bug-fix warranty:</p>
+                    <ul>
+                        <li><strong>Projects under $20K:</strong> 30 days</li>
+                        <li><strong>$20K - $40K projects:</strong> 60 days</li>
+                        <li><strong>$40K+ projects:</strong> 90 days</li>
+                    </ul>
+                    <p>During warranty, we fix any bugs that cause the system to not work as specified in the Statement of Work — at no charge. Not covered: requests for new features or changes to scope beyond the original project (we can quote those separately).</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Do you offer ongoing support?<span class="arrow">&#9660;</span></button>
+                <div class="faq-answer">
+                    <p>Yes — we offer retainer packages starting at $1,000/month that cover bug fixes, minor adjustments, monitoring, API updates, and monthly performance reviews. Most clients find this valuable as their business grows and their automation needs evolve.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Is there a contract?<span class="arrow">&#9660;</span></button>
+                <div class="faq-answer">
+                    <p>Yes. Every engagement is governed by a Master Service Agreement (MSA) and a project-specific Statement of Work (SOW). These protect both of us by clearly defining scope, deliverables, timeline, and payment terms. No surprises for either party.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- GETTING STARTED -->
+        <div class="faq-category">
+            <h2>Getting Started</h2>
+
+            <div class="faq-item">
+                <button class="faq-question">How do I get started?<span class="arrow">&#9660;</span></button>
+                <div class="faq-answer">
+                    <p><strong>Book a free 30-minute discovery call:</strong> <a href="https://cal.houseofbachae.com/bebe/30min">cal.houseofbachae.com/bebe/30min</a></p>
+                    <p>We'll discuss your business, identify what can be automated, and talk through next steps. No pressure, no obligation.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">What if I'm not sure what to automate?<span class="arrow">&#9660;</span></button>
+                <div class="faq-answer">
+                    <p>That's exactly what the discovery call is for. Most clients know they're spending too much time on something but aren't sure what the solution looks like. We help you identify the highest-impact opportunities and prioritize them.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Can I see examples of your work?<span class="arrow">&#9660;</span></button>
+                <div class="faq-answer">
+                    <p>We maintain client confidentiality, but we share detailed descriptions of the types of systems we've built — including the challenge, the solution, and the results. Visit our <a href="/portfolio.html">portfolio page</a> or ask during the discovery call.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <h2>Still Have Questions?</h2>
+        <p>Book a free 30-minute discovery call. No pressure, no obligation — just answers.</p>
+        <a href="https://cal.houseofbachae.com/bebe/30min" class="cta-button">Book a Discovery Call</a>
+    </div>
+
+    <footer>
+        <p><strong>House of Bachae</strong></p>
+        <p>AI Automation Consulting | Minneapolis, Minnesota</p>
+        <p>Email: <a href="mailto:bebe@houseofbachae.com">bebe@houseofbachae.com</a></p>
+        <p>Phone: <a href="tel:+17632006380">(763) 200-6380</a></p>
+        <div class="footer-links">
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/tos.html">Terms of Service</a>
+            <a href="/faq.html">FAQ</a>
+            <a href="/portfolio.html">Our Work</a>
+            <a href="/about.html">About</a>
+        </div>
+        <p style="margin-top: 30px; color: var(--graphite);">&copy; 2026 House of Bachae. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(function(button) {
+            button.addEventListener('click', function() {
+                this.parentElement.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

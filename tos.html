@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | House of Bachae - AI Automation Consulting</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --obsidian: #0a0a0a;
+            --dark-brown: #3d2817;
+            --bone-white: #f5f5f0;
+            --bronze: #b8860b;
+            --gold: #d4af37;
+            --warm-brown: #5a3e2b;
+            --graphite: #4a4a4a;
+            --stone-beige: #d4c5b0;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--bone-white);
+            background: var(--obsidian);
+        }
+        nav {
+            background: rgba(10, 10, 10, 0.98);
+            padding: 25px 50px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--bronze);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--bone-white);
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            position: relative;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--bronze);
+            transition: width 0.3s;
+        }
+        nav a:hover::after { width: 100%; }
+        nav a:hover { color: var(--gold); }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--bronze) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+        }
+        .logo a {
+            background: linear-gradient(135deg, var(--bronze) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .logo a::after { display: none; }
+        .nav-cta {
+            background: linear-gradient(135deg, var(--bronze) 0%, var(--gold) 100%);
+            -webkit-background-clip: initial;
+            -webkit-text-fill-color: initial;
+            color: var(--obsidian) !important;
+            padding: 10px 24px;
+            font-weight: 700 !important;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover {
+            color: var(--obsidian) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(184, 134, 11, 0.5);
+        }
+        .page-header {
+            padding: 80px 40px 60px;
+            text-align: center;
+            background: radial-gradient(ellipse at left, var(--dark-brown) 0%, var(--obsidian) 50%);
+            border-bottom: 3px solid var(--bronze);
+        }
+        .page-header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--bone-white) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+        .page-header p {
+            color: var(--stone-beige);
+            font-size: 1.1rem;
+        }
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+        .content h2 {
+            font-size: 1.8rem;
+            color: var(--bronze);
+            margin: 50px 0 20px;
+            font-weight: 700;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--graphite);
+        }
+        .content h2:first-of-type { margin-top: 0; }
+        .content p {
+            color: var(--stone-beige);
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        .content ul, .content ol {
+            color: var(--stone-beige);
+            margin: 10px 0 20px 25px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        .content li { margin-bottom: 8px; }
+        .content strong { color: var(--bone-white); }
+        .content a { color: var(--gold); text-decoration: none; }
+        .content a:hover { color: var(--bronze); }
+        .legal-caps {
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+        .contact-box {
+            background: linear-gradient(135deg, #1a1a1a 0%, #242424 100%);
+            padding: 40px;
+            border-left: 4px solid var(--bronze);
+            margin-top: 40px;
+        }
+        .contact-box p { margin-bottom: 8px; }
+        .contact-box a { color: var(--gold); text-decoration: none; }
+        .contact-box a:hover { color: var(--bronze); }
+        footer {
+            background: #0a0a0a;
+            color: var(--stone-beige);
+            text-align: center;
+            padding: 60px 40px;
+            border-top: 2px solid var(--bronze);
+        }
+        footer p { margin-bottom: 15px; font-size: 1.05rem; }
+        footer a { color: var(--bronze); text-decoration: none; transition: color 0.3s; }
+        footer a:hover { color: var(--gold); }
+        .footer-links { margin-top: 20px; margin-bottom: 20px; }
+        .footer-links a { margin: 0 15px; font-size: 0.95rem; }
+        @media (max-width: 768px) {
+            nav { padding: 15px 20px; }
+            nav ul { flex-direction: column; gap: 12px; }
+            .logo { font-size: 1.2rem; }
+            .page-header { padding: 50px 20px 40px; }
+            .page-header h1 { font-size: 2rem; }
+            .content { padding: 40px 20px; }
+            .content h2 { font-size: 1.4rem; }
+            .contact-box { padding: 25px 20px; }
+            .nav-cta { padding: 8px 18px; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="logo"><a href="/">HOUSE OF BACHAE</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/portfolio.html">Our Work</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/#book" class="nav-cta">Book a Call</a></li>
+            <li><a href="/#quote">Get Quote</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-header">
+        <h1>Terms of Service</h1>
+        <p>Last Updated: February 2026</p>
+    </div>
+
+    <div class="content">
+        <h2>1. Acceptance of Terms</h2>
+        <p>By accessing or using the website located at houseofbachae.com (the "Website"), you ("User," "you," or "your") agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, you must not access or use the Website.</p>
+        <p>House of Bachae LLC, a Minnesota limited liability company ("Company," "we," "us," or "our"), reserves the right to modify these Terms at any time. Changes become effective upon posting to the Website. Your continued use of the Website after changes constitutes acceptance of the modified Terms.</p>
+
+        <h2>2. Description of Services</h2>
+        <p>The Website provides information about Company's AI automation consulting services, including workflow design, AI agent implementation, system integration, and related technology services. The Website may also include:</p>
+        <ul>
+            <li>A contact form and quote request functionality</li>
+            <li>Scheduling tools for discovery calls</li>
+            <li>Educational content about automation and AI</li>
+            <li>Case studies and portfolio examples</li>
+            <li>Links to Company's social media profiles</li>
+        </ul>
+        <p>The Website is informational and does not constitute a binding offer. All services are provided under separate written agreements (Master Service Agreement, Statement of Work, etc.).</p>
+
+        <h2>3. User Conduct</h2>
+        <p>You agree not to:</p>
+        <ul>
+            <li>Use the Website for any unlawful purpose or in violation of any applicable laws</li>
+            <li>Attempt to gain unauthorized access to any portion of the Website, server, or connected systems</li>
+            <li>Submit false, misleading, or fraudulent information through any form on the Website</li>
+            <li>Interfere with or disrupt the Website's operation, servers, or networks</li>
+            <li>Use automated tools (bots, scrapers, crawlers) to access the Website without prior written permission</li>
+            <li>Transmit malware, viruses, or other harmful code</li>
+            <li>Impersonate any person or entity</li>
+            <li>Collect or harvest personal information from the Website without authorization</li>
+        </ul>
+
+        <h2>4. Intellectual Property</h2>
+        <p>All content on the Website, including but not limited to text, graphics, logos, images, design elements, the "House of Bachae" name and branding, and software, is the property of Company or its licensors and is protected by United States and international intellectual property laws.</p>
+        <p>You may not reproduce, distribute, modify, create derivative works from, publicly display, or exploit any Website content without prior written permission from Company, except for personal, non-commercial use such as viewing and printing for reference purposes.</p>
+        <p>The Company's trademarks, service marks, and trade dress may not be used in connection with any product or service without Company's prior written consent.</p>
+
+        <h2>5. User Submissions</h2>
+        <p>By submitting information through the Website (including quote request forms, contact forms, and scheduling tools), you:</p>
+        <ul>
+            <li>Grant Company a non-exclusive, royalty-free license to use the information solely for the purpose of responding to your inquiry and providing requested services</li>
+            <li>Represent that the information you provide is accurate and complete</li>
+            <li>Acknowledge that your submission does not create a client relationship or obligation for Company to provide services</li>
+        </ul>
+        <p>Company will handle your personal information in accordance with our <a href="/privacy.html">Privacy Policy</a>.</p>
+
+        <h2>6. Quote Requests and Pricing</h2>
+        <p>Any pricing information displayed on the Website, including tiered service packages, retainer rates, and promotional discounts, is provided for general informational purposes and does not constitute a binding offer. Actual pricing will be determined through a discovery process and documented in a formal Statement of Work.</p>
+        <p>Promotional offers and discounts displayed on the Website may be time-limited, subject to availability, and may be modified or withdrawn at any time without notice.</p>
+
+        <h2>7. Scheduling and Appointments</h2>
+        <p>The Website may include scheduling tools (such as Cal.com integration) for booking discovery calls and consultations. By scheduling an appointment:</p>
+        <ul>
+            <li>You agree to provide accurate contact information</li>
+            <li>You agree to attend scheduled appointments or provide reasonable advance notice of cancellation</li>
+            <li>You acknowledge that a scheduled call does not obligate either party to enter into a service agreement</li>
+        </ul>
+
+        <h2>8. Third-Party Links and Services</h2>
+        <p>The Website may contain links to third-party websites, services, or content. These links are provided for convenience only. Company does not endorse, control, or assume responsibility for any third-party content or services. Your use of third-party services is subject to their respective terms and policies.</p>
+
+        <h2>9. Disclaimer of Warranties</h2>
+        <p class="legal-caps"><strong>THE WEBSITE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, OR ACCURACY OF CONTENT.</strong></p>
+        <p>Company does not warrant that:</p>
+        <ul>
+            <li>The Website will be uninterrupted, error-free, or secure</li>
+            <li>Any defects will be corrected</li>
+            <li>The Website or its servers are free of viruses or harmful components</li>
+            <li>The information on the Website is complete, accurate, or current</li>
+        </ul>
+
+        <h2>10. Limitation of Liability</h2>
+        <p class="legal-caps"><strong>TO THE MAXIMUM EXTENT PERMITTED BY LAW, COMPANY SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF OR INABILITY TO USE THE WEBSITE, EVEN IF COMPANY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</strong></p>
+        <p class="legal-caps"><strong>COMPANY'S TOTAL LIABILITY FOR ALL CLAIMS ARISING FROM YOUR USE OF THE WEBSITE SHALL NOT EXCEED ONE HUNDRED DOLLARS ($100.00).</strong></p>
+
+        <h2>11. Indemnification</h2>
+        <p>You agree to indemnify, defend, and hold harmless Company, its members, employees, and agents from any claims, damages, losses, liabilities, costs, and expenses (including attorneys' fees) arising from:</p>
+        <ul>
+            <li>Your use of the Website</li>
+            <li>Your violation of these Terms</li>
+            <li>Your violation of any third party's rights</li>
+            <li>Any content you submit through the Website</li>
+        </ul>
+
+        <h2>12. Privacy</h2>
+        <p>Your use of the Website is also governed by our <a href="/privacy.html">Privacy Policy</a>, which is incorporated into these Terms by reference. Please review the Privacy Policy to understand our data practices.</p>
+
+        <h2>13. Governing Law and Jurisdiction</h2>
+        <p>These Terms shall be governed by and construed in accordance with the laws of the State of Minnesota, without regard to conflict of laws principles. Any disputes arising from these Terms or your use of the Website shall be resolved exclusively in the state or federal courts located in Hennepin County, Minnesota. You consent to the personal jurisdiction of such courts.</p>
+
+        <h2>14. Severability</h2>
+        <p>If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions shall continue in full force and effect.</p>
+
+        <h2>15. Entire Agreement</h2>
+        <p>These Terms, together with the Privacy Policy, constitute the entire agreement between you and Company regarding your use of the Website. These Terms do not govern any consulting services, which are subject to separate written agreements.</p>
+
+        <h2>16. Contact Information</h2>
+        <p>If you have questions about these Terms, please contact us:</p>
+        <div class="contact-box">
+            <p><strong>House of Bachae LLC</strong></p>
+            <p>Minneapolis, Minnesota</p>
+            <p>Phone: <a href="tel:+17632006380">(763) 200-6380</a></p>
+            <p>Email: <a href="mailto:bebe@houseofbachae.com">bebe@houseofbachae.com</a></p>
+            <p>Website: <a href="https://houseofbachae.com">houseofbachae.com</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>House of Bachae</strong></p>
+        <p>AI Automation Consulting | Minneapolis, Minnesota</p>
+        <p>Email: <a href="mailto:bebe@houseofbachae.com">bebe@houseofbachae.com</a></p>
+        <p>Phone: <a href="tel:+17632006380">(763) 200-6380</a></p>
+        <div class="footer-links">
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/tos.html">Terms of Service</a>
+            <a href="/faq.html">FAQ</a>
+            <a href="/portfolio.html">Our Work</a>
+            <a href="/about.html">About</a>
+        </div>
+        <p style="margin-top: 30px; color: var(--graphite);">&copy; 2026 House of Bachae. All rights reserved.</p>
+    </footer>
+</body>
+</html>

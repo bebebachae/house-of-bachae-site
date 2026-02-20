@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Bebe Bachae | House of Bachae - AI Automation Consulting</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --obsidian: #0a0a0a;
+            --dark-brown: #3d2817;
+            --bone-white: #f5f5f0;
+            --bronze: #b8860b;
+            --gold: #d4af37;
+            --warm-brown: #5a3e2b;
+            --graphite: #4a4a4a;
+            --stone-beige: #d4c5b0;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--bone-white);
+            background: var(--obsidian);
+        }
+        nav {
+            background: rgba(10, 10, 10, 0.98);
+            padding: 25px 50px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--bronze);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--bone-white);
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            position: relative;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--bronze);
+            transition: width 0.3s;
+        }
+        nav a:hover::after { width: 100%; }
+        nav a:hover { color: var(--gold); }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--bronze) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+        }
+        .logo a {
+            background: linear-gradient(135deg, var(--bronze) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .logo a::after { display: none; }
+        .nav-cta {
+            background: linear-gradient(135deg, var(--bronze) 0%, var(--gold) 100%);
+            -webkit-background-clip: initial;
+            -webkit-text-fill-color: initial;
+            color: var(--obsidian) !important;
+            padding: 10px 24px;
+            font-weight: 700 !important;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover {
+            color: var(--obsidian) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(184, 134, 11, 0.5);
+        }
+
+        /* Hero */
+        .about-hero {
+            padding: 100px 40px 80px;
+            background: radial-gradient(ellipse at left, var(--dark-brown) 0%, var(--obsidian) 50%);
+            border-bottom: 3px solid var(--bronze);
+        }
+        .about-hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .photo-placeholder {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1a1a1a 0%, #242424 100%);
+            border: 3px solid var(--bronze);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px;
+        }
+        .photo-placeholder .initials {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--bronze) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        .photo-placeholder .contact-prompt {
+            font-size: 0.85rem;
+            color: var(--stone-beige);
+        }
+        .photo-placeholder .contact-prompt a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .photo-placeholder .contact-prompt a:hover {
+            color: var(--bronze);
+        }
+        .about-hero-text h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--bone-white) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+        .about-hero-text .title {
+            font-size: 1.2rem;
+            color: var(--bronze);
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        .about-hero-text p {
+            color: var(--stone-beige);
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+
+        /* Content sections */
+        .about-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+        .about-section h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--bronze);
+            margin-bottom: 25px;
+        }
+        .about-section p {
+            color: var(--stone-beige);
+            font-size: 1.1rem;
+            line-height: 1.9;
+            margin-bottom: 18px;
+        }
+        .about-section strong { color: var(--bone-white); }
+
+        /* Differentiators */
+        .differentiators {
+            background: linear-gradient(180deg, #0f0f0f 0%, var(--obsidian) 100%);
+            padding: 80px 40px;
+            border-top: 1px solid var(--graphite);
+            border-bottom: 1px solid var(--graphite);
+        }
+        .differentiators-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .differentiators h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--bronze);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .diff-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .diff-item {
+            background: linear-gradient(135deg, #141414 0%, #1a1a1a 100%);
+            border: 1px solid var(--graphite);
+            padding: 35px;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+        .diff-item:hover {
+            border-color: var(--bronze);
+            transform: translateY(-3px);
+        }
+        .diff-item:last-child {
+            grid-column: 1 / -1;
+            max-width: 500px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .diff-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+        .diff-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--bone-white);
+            margin-bottom: 10px;
+        }
+        .diff-text {
+            color: var(--stone-beige);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* RAPID Method */
+        .rapid-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+        .rapid-section h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--bronze);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .rapid-subtitle {
+            color: var(--stone-beige);
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .rapid-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        .rapid-step {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 25px;
+            align-items: start;
+            background: linear-gradient(135deg, #141414 0%, #1a1a1a 100%);
+            border: 1px solid var(--graphite);
+            padding: 30px;
+            transition: border-color 0.3s;
+        }
+        .rapid-step:hover {
+            border-color: var(--bronze);
+        }
+        .rapid-letter {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--bronze) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+        .rapid-step h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--bone-white);
+            margin-bottom: 8px;
+        }
+        .rapid-step p {
+            color: var(--stone-beige);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            padding: 80px 40px;
+            background: radial-gradient(ellipse at right, var(--dark-brown) 0%, var(--obsidian) 50%);
+            border-top: 1px solid var(--graphite);
+        }
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--bone-white) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+        .cta-section p {
+            color: var(--stone-beige);
+            font-size: 1.15rem;
+            margin-bottom: 35px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--bronze) 0%, var(--gold) 100%);
+            color: var(--obsidian);
+            padding: 18px 50px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(184, 134, 11, 0.5);
+        }
+        .cta-or {
+            display: block;
+            color: var(--graphite);
+            margin: 20px 0;
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .cta-phone a {
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        .cta-phone a:hover { color: var(--bronze); }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            color: var(--stone-beige);
+            text-align: center;
+            padding: 60px 40px;
+            border-top: 2px solid var(--bronze);
+        }
+        footer p { margin-bottom: 15px; font-size: 1.05rem; }
+        footer a { color: var(--bronze); text-decoration: none; transition: color 0.3s; }
+        footer a:hover { color: var(--gold); }
+        .footer-links { margin-top: 20px; margin-bottom: 20px; }
+        .footer-links a { margin: 0 15px; font-size: 0.95rem; }
+
+        @media (max-width: 768px) {
+            nav { padding: 15px 20px; }
+            nav ul { flex-direction: column; gap: 12px; }
+            .logo { font-size: 1.2rem; }
+            .about-hero { padding: 60px 20px; }
+            .about-hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 30px;
+            }
+            .photo-placeholder {
+                width: 200px;
+                height: 200px;
+                margin: 0 auto;
+            }
+            .photo-placeholder .initials { font-size: 2.5rem; }
+            .about-hero-text h1 { font-size: 2rem; }
+            .about-hero-text .title { font-size: 1rem; }
+            .about-section { padding: 50px 20px; }
+            .about-section h2 { font-size: 1.6rem; }
+            .differentiators { padding: 50px 20px; }
+            .differentiators h2 { font-size: 1.6rem; }
+            .diff-grid { grid-template-columns: 1fr; }
+            .diff-item:last-child { max-width: 100%; }
+            .rapid-section { padding: 50px 20px; }
+            .rapid-section h2 { font-size: 1.6rem; }
+            .rapid-step { grid-template-columns: 60px 1fr; gap: 15px; padding: 20px; }
+            .rapid-letter { font-size: 2rem; }
+            .cta-section { padding: 50px 20px; }
+            .cta-section h2 { font-size: 1.8rem; }
+            .nav-cta { padding: 8px 18px; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="logo"><a href="/">HOUSE OF BACHAE</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/portfolio.html">Our Work</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/#book" class="nav-cta">Book a Call</a></li>
+            <li><a href="/#quote">Get Quote</a></li>
+        </ul>
+    </nav>
+
+    <div class="about-hero">
+        <div class="about-hero-content">
+            <div class="photo-placeholder">
+                <span class="initials">BB</span>
+                <span class="contact-prompt"><a href="https://cal.houseofbachae.com/bebe/30min">Let's Talk</a></span>
+            </div>
+            <div class="about-hero-text">
+                <h1>Bebe Bachae</h1>
+                <p class="title">Founder & AI Automation Consultant</p>
+                <p>I help businesses stop wasting time on work that software should be doing. Based in Minneapolis, I design and build custom AI-powered automation systems that eliminate bottlenecks, reduce errors, and give teams their time back.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-section">
+        <h2>The Problem I Keep Seeing</h2>
+        <p>I've worked with teams buried in manual tasks — data entry, chasing follow-ups, copy-pasting between tools, building the same reports every week. Smart, talented people spending hours on work a system could handle forever.</p>
+        <p>The frustration isn't just the wasted time. It's knowing there's a better way and not having someone to build it. Someone who actually listens, speaks plain English, and delivers something that works — not a sales pitch disguised as a consultation.</p>
+        <p>That's why I started House of Bachae. <strong>To be the person I wished my clients had found sooner.</strong></p>
+    </div>
+
+    <div class="differentiators">
+        <div class="differentiators-inner">
+            <h2>What Makes Working With Me Different</h2>
+            <div class="diff-grid">
+                <div class="diff-item">
+                    <div class="diff-number">01</div>
+                    <div class="diff-title">I Listen First</div>
+                    <div class="diff-text">Every project starts with understanding YOUR business, not pitching a template. I ask questions, take notes, and map your actual workflow before suggesting a single thing.</div>
+                </div>
+                <div class="diff-item">
+                    <div class="diff-number">02</div>
+                    <div class="diff-title">Plain English, Always</div>
+                    <div class="diff-text">No jargon. No confusing tech talk. You'll understand exactly what's being built and why. If I can't explain it simply, I haven't understood it well enough.</div>
+                </div>
+                <div class="diff-item">
+                    <div class="diff-number">03</div>
+                    <div class="diff-title">You Own Everything</div>
+                    <div class="diff-text">Every workflow, every document, every system I build is 100% yours. No monthly fees. No vendor lock-in. You walk away with full control of your own tools.</div>
+                </div>
+                <div class="diff-item">
+                    <div class="diff-number">04</div>
+                    <div class="diff-title">ROI-Focused</div>
+                    <div class="diff-text">If it doesn't save you time or make you money, I don't build it. Every project includes ROI projections so you know exactly what to expect before we start.</div>
+                </div>
+                <div class="diff-item">
+                    <div class="diff-number">05</div>
+                    <div class="diff-title">I'm Here After Launch</div>
+                    <div class="diff-text">30-day warranty on every project. Retainer options for ongoing support. You're never left hanging after delivery — I stand behind my work, period.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="rapid-section">
+        <h2>The RAPID Method</h2>
+        <p class="rapid-subtitle">How every project works — clear, structured, no surprises.</p>
+        <div class="rapid-steps">
+            <div class="rapid-step">
+                <div class="rapid-letter">R</div>
+                <div>
+                    <h3>Research</h3>
+                    <p>Deep dive into your current process. What works, what doesn't, where things break. We start with a 30-minute discovery call — no pressure, no obligation.</p>
+                </div>
+            </div>
+            <div class="rapid-step">
+                <div class="rapid-letter">A</div>
+                <div>
+                    <h3>Analyze</h3>
+                    <p>Identify what to automate first for maximum impact. Calculate ROI for each opportunity so you can make informed decisions about where to invest.</p>
+                </div>
+            </div>
+            <div class="rapid-step">
+                <div class="rapid-letter">P</div>
+                <div>
+                    <h3>Propose</h3>
+                    <p>Clear scope, timeline, and investment — delivered within 24-48 hours. You know exactly what you're getting before we start. No hidden fees, no scope surprises.</p>
+                </div>
+            </div>
+            <div class="rapid-step">
+                <div class="rapid-letter">I</div>
+                <div>
+                    <h3>Implement</h3>
+                    <p>Build, test, refine. You get updates throughout — not radio silence for weeks. Weekly progress reports so you always know where things stand.</p>
+                </div>
+            </div>
+            <div class="rapid-step">
+                <div class="rapid-letter">D</div>
+                <div>
+                    <h3>Deliver</h3>
+                    <p>Training video, full documentation, and complete handover. Your team knows how to use and manage the system. Plus a 30-day warranty to make sure everything runs smoothly.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <h2>Ready to Stop Wasting Time?</h2>
+        <p>Book a free 30-minute discovery call. We'll talk about your biggest bottleneck and whether automation makes sense. No pitch, no pressure — just an honest conversation.</p>
+        <a href="https://cal.houseofbachae.com/bebe/30min" class="cta-button">Book a Discovery Call</a>
+        <span class="cta-or">or call directly</span>
+        <p class="cta-phone"><a href="tel:+17632006380">(763) 200-6380</a></p>
+    </div>
+
+    <footer>
+        <p><strong>House of Bachae</strong></p>
+        <p>AI Automation Consulting | Minneapolis, Minnesota</p>
+        <p>Email: <a href="mailto:bebe@houseofbachae.com">bebe@houseofbachae.com</a></p>
+        <p>Phone: <a href="tel:+17632006380">(763) 200-6380</a></p>
+        <div class="footer-links">
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/tos.html">Terms of Service</a>
+            <a href="/faq.html">FAQ</a>
+            <a href="/portfolio.html">Our Work</a>
+            <a href="/about.html">About</a>
+        </div>
+        <p style="margin-top: 30px; color: var(--graphite);">&copy; 2026 House of Bachae. All rights reserved.</p>
+    </footer>
+</body>
+</html>

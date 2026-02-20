@@ -258,6 +258,195 @@
             line-height: 1.9;
             font-size: 1.1rem;
         }
+
+        .service-card ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+        .service-card ul li {
+            color: var(--stone-beige);
+            padding: 5px 0;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .service-card ul li::before {
+            content: '\2713';
+            color: var(--bronze);
+            font-weight: 700;
+            margin-right: 10px;
+        }
+        .service-card .service-note {
+            margin-top: 20px;
+            font-style: italic;
+            color: var(--gold);
+            font-size: 0.95rem;
+        }
+
+        /* Quick-Buy Packages */
+        .packages {
+            padding: 120px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .packages h2 {
+            text-align: center;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--bone-white) 0%, var(--bronze) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .packages-subtitle {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px auto;
+            font-size: 1.15rem;
+            color: var(--stone-beige);
+            line-height: 1.7;
+        }
+        .packages-guarantee {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 60px auto;
+            background: linear-gradient(135deg, #1a1a1a 0%, #242424 100%);
+            border: 1px solid var(--bronze);
+            padding: 25px 30px;
+        }
+        .packages-guarantee p {
+            color: var(--stone-beige);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        .packages-guarantee strong {
+            color: var(--gold);
+        }
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 35px;
+            margin-bottom: 50px;
+        }
+        .package-card {
+            background: linear-gradient(135deg, #141414 0%, #1a1a1a 100%);
+            border: 1px solid var(--graphite);
+            padding: 40px 35px;
+            transition: all 0.4s;
+            position: relative;
+        }
+        .package-card:hover {
+            border-color: var(--bronze);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(184, 134, 11, 0.2);
+        }
+        .package-card .pkg-price {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+        .package-card .pkg-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--bone-white);
+            margin-bottom: 12px;
+        }
+        .package-card .pkg-problem {
+            color: var(--stone-beige);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 18px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--graphite);
+        }
+        .package-card .pkg-features {
+            list-style: none;
+            margin-bottom: 18px;
+        }
+        .package-card .pkg-features li {
+            color: var(--stone-beige);
+            font-size: 0.95rem;
+            padding: 4px 0;
+            line-height: 1.5;
+        }
+        .package-card .pkg-features li::before {
+            content: '\2713';
+            color: var(--bronze);
+            font-weight: 700;
+            margin-right: 8px;
+        }
+        .package-card .pkg-for {
+            font-size: 0.85rem;
+            color: var(--graphite);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        .package-card .pkg-for strong {
+            color: var(--stone-beige);
+        }
+        .package-card .pkg-cta {
+            display: block;
+            text-align: center;
+            background: linear-gradient(135deg, var(--bronze) 0%, var(--gold) 100%);
+            color: var(--obsidian);
+            padding: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 1px;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+        .package-card .pkg-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(184, 134, 11, 0.5);
+        }
+        .package-card.featured {
+            border-color: var(--bronze);
+            box-shadow: 0 5px 30px rgba(184, 134, 11, 0.15);
+        }
+        .package-card.featured::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: 0;
+            right: 30px;
+            background: linear-gradient(135deg, var(--bronze) 0%, var(--gold) 100%);
+            color: var(--obsidian);
+            padding: 5px 15px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .bonus-package {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .bonus-package h3 {
+            color: var(--bronze);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+        .bonus-card {
+            background: linear-gradient(135deg, #141414 0%, #1a1a1a 100%);
+            border: 1px dashed var(--bronze);
+            padding: 35px;
+            transition: all 0.3s;
+        }
+        .bonus-card:hover {
+            border-style: solid;
+            transform: translateY(-3px);
+        }
+        .packages-delivery {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--stone-beige);
+            font-size: 1rem;
+        }
+        .packages-delivery strong {
+            color: var(--bone-white);
+        }
         
         .case-studies {
             padding: 120px 40px;
@@ -703,6 +892,13 @@
             .service-card { padding: 35px 25px; }
             .service-card:hover { transform: translateX(5px) translateY(-3px); }
 
+            .packages { padding: 60px 20px; }
+            .packages h2 { font-size: 2rem; margin-bottom: 15px; }
+            .packages-subtitle { font-size: 1rem; margin-bottom: 40px; }
+            .package-grid { grid-template-columns: 1fr; gap: 25px; }
+            .package-card { padding: 30px 25px; }
+            .bonus-package { max-width: 100%; }
+
             .case-studies { padding: 60px 20px; }
             .case-studies-intro { font-size: 1rem; margin-bottom: 40px; }
             .case-study { padding: 30px 20px; }
@@ -736,10 +932,11 @@
 <body>
     <nav>
         <ul>
-            <li class="logo">HOUSE OF BACHAE</li>
+            <li class="logo"><a href="/" style="background: linear-gradient(135deg, var(--bronze) 0%, var(--gold) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">HOUSE OF BACHAE</a></li>
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#case-studies">Case Studies</a></li>
+            <li><a href="/portfolio.html">Our Work</a></li>
+            <li><a href="/about.html">About</a></li>
             <li><a href="#book" class="nav-cta">Book a Call</a></li>
             <li><a href="#quote">Get Quote</a></li>
         </ul>
@@ -764,19 +961,162 @@
         <div class="service-grid">
             <div class="service-card">
                 <h3>Company Bottleneck Audits</h3>
-                <p>We identify exactly where your operations slow down, where resources drain, and where opportunities hide. Our comprehensive audits reveal the precise automation solutions your business needs.</p>
+                <p>We dig into your day-to-day operations and show you exactly where time, money, and opportunities are being wasted. You get a clear report:</p>
+                <ul>
+                    <li>Which tasks eat the most hours</li>
+                    <li>Where errors cost you money</li>
+                    <li>Which processes can be automated</li>
+                    <li>ROI projections for each fix</li>
+                    <li>A prioritized action plan</li>
+                </ul>
+                <p class="service-note">Most clients find 10-20 hours/week of recoverable time in the first audit.</p>
             </div>
-            
+
             <div class="service-card">
                 <h3>Custom Automation Solutions</h3>
-                <p>Every business is unique. We design and implement tailored automation workflows that fit your specific processes, tools, and goals—not generic templates.</p>
+                <p>No two businesses are the same. We design workflows around YOUR tools, YOUR processes, YOUR goals.</p>
+                <ul>
+                    <li>Connects the systems you already use</li>
+                    <li>Eliminates copy-pasting and data entry</li>
+                    <li>Routes work to the right people automatically</li>
+                    <li>Catches errors before they cause problems</li>
+                    <li>Full documentation so your team stays in control</li>
+                </ul>
+                <p class="service-note">You own everything we build. No monthly fees, no vendor lock-in.</p>
             </div>
-            
+
             <div class="service-card">
                 <h3>AI Integration</h3>
-                <p>Leverage cutting-edge AI to handle repetitive tasks, generate insights, and free your team to focus on innovation and growth.</p>
+                <p>Go beyond "if this, then that" — add real intelligence that handles tasks requiring human judgment.</p>
+                <ul>
+                    <li>Read and respond to emails based on content</li>
+                    <li>Qualify leads before they reach your team</li>
+                    <li>Generate reports with insights, not just numbers</li>
+                    <li>Route requests based on urgency and context</li>
+                    <li>Learn from patterns to improve over time</li>
+                </ul>
+                <p class="service-note">This is what separates automation from transformation.</p>
             </div>
         </div>
+    </section>
+
+    <!-- Quick-Buy Packages -->
+    <section id="packages" class="packages">
+        <h2>Ready-Made Solutions</h2>
+        <p class="packages-subtitle">Pre-built automation systems for the most common business bottlenecks. Complex enough that no single app can replace them. Simple enough to deploy in days.</p>
+
+        <div class="packages-guarantee">
+            <p><strong>Satisfaction Guaranteed.</strong> 50% deposit to start. You test with your real data before paying the rest. If it works, you pay the final 50%. If it doesn't, we fix it. If we can't make it work — <strong>full refund</strong>.</p>
+        </div>
+
+        <div class="package-grid">
+            <!-- Package 1 -->
+            <div class="package-card">
+                <div class="pkg-price">$3,997</div>
+                <div class="pkg-name">Smart Inquiry Hub</div>
+                <div class="pkg-problem">Leads and inquiries come in from everywhere — website, email, phone, Google, social. Nobody knows who's handling what, and hot leads slip through the cracks.</div>
+                <ul class="pkg-features">
+                    <li>Multi-channel capture (website, email, phone, social)</li>
+                    <li>AI categorization and urgency scoring</li>
+                    <li>Smart routing to the right person</li>
+                    <li>Personalized auto-acknowledgment</li>
+                    <li>Escalation alerts for high-priority leads</li>
+                    <li>Daily inquiry summary report</li>
+                </ul>
+                <div class="pkg-for"><strong>Built for:</strong> Real estate, law firms, HVAC, insurance, medical, property management</div>
+                <a href="#quote" class="pkg-cta">Get Started</a>
+            </div>
+
+            <!-- Package 2 -->
+            <div class="package-card">
+                <div class="pkg-price">$4,497</div>
+                <div class="pkg-name">Automated Document Factory</div>
+                <div class="pkg-problem">Creating proposals, contracts, and reports takes hours of copy-pasting and formatting. Then you lose track of what's been sent, signed, or expired.</div>
+                <ul class="pkg-features">
+                    <li>AI-customized document generation</li>
+                    <li>Multiple document types (proposals, contracts, reports)</li>
+                    <li>Auto-send for review or signature</li>
+                    <li>Status tracking (sent, opened, signed, expired)</li>
+                    <li>3-day signature reminders</li>
+                    <li>Version history and audit trail</li>
+                </ul>
+                <div class="pkg-for"><strong>Built for:</strong> Law firms, insurance, real estate, agencies, HVAC, property management</div>
+                <a href="#quote" class="pkg-cta">Get Started</a>
+            </div>
+
+            <!-- Package 3 - Featured -->
+            <div class="package-card featured">
+                <div class="pkg-price">$4,997</div>
+                <div class="pkg-name">Revenue Recovery System</div>
+                <div class="pkg-problem">Most businesses lose 5-15% of revenue to unbilled work, overdue invoices, and forgotten contract renewals. You don't know what you're losing until it's gone.</div>
+                <ul class="pkg-features">
+                    <li>Connects to your invoicing, CRM, calendar, and email</li>
+                    <li>Escalating overdue reminders (Day 3, 7, 14, 30)</li>
+                    <li>Detects completed-but-unbilled work</li>
+                    <li>Tracks contract renewals 30/60/90 days out</li>
+                    <li>AI weekly "Money on the Table" report</li>
+                    <li>Revenue dashboard with trends</li>
+                </ul>
+                <div class="pkg-for"><strong>Built for:</strong> All service businesses — anyone who invoices clients</div>
+                <a href="#quote" class="pkg-cta">Get Started</a>
+            </div>
+
+            <!-- Package 4 -->
+            <div class="package-card">
+                <div class="pkg-price">$3,497</div>
+                <div class="pkg-name">AI Daily Operations Briefing</div>
+                <div class="pkg-problem">Every morning starts with 30-60 minutes of checking dashboards, scanning emails, and trying to figure out what's urgent. Important things still get missed.</div>
+                <ul class="pkg-features">
+                    <li>Connects to calendar, CRM, email, invoicing, tasks</li>
+                    <li>AI-written daily briefing delivered at 7 AM</li>
+                    <li>Priority flagging ("3 most important actions today")</li>
+                    <li>Missed follow-up and overdue task alerts</li>
+                    <li>Weekly trend report with insights</li>
+                    <li>Revenue and pipeline snapshot</li>
+                </ul>
+                <div class="pkg-for"><strong>Built for:</strong> Business owners, operations managers, agency owners</div>
+                <a href="#quote" class="pkg-cta">Get Started</a>
+            </div>
+
+            <!-- Package 5 -->
+            <div class="package-card">
+                <div class="pkg-price">$3,497</div>
+                <div class="pkg-name">Smart Intake & Routing System</div>
+                <div class="pkg-problem">New clients fill out a generic form and wait. Someone has to read it, figure out what they need, and manually assign it to the right person. It's slow, inconsistent, and frustrating.</div>
+                <ul class="pkg-features">
+                    <li>Adaptive intake form (questions change based on answers)</li>
+                    <li>AI categorization and client profiling</li>
+                    <li>Auto-routing by type, location, or specialty</li>
+                    <li>Organized client record created automatically</li>
+                    <li>Personalized confirmation with next steps</li>
+                    <li>Internal AI brief for the assigned team member</li>
+                </ul>
+                <div class="pkg-for"><strong>Built for:</strong> Law firms, healthcare, insurance, real estate, HVAC, property management</div>
+                <a href="#quote" class="pkg-cta">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Bonus Package -->
+        <div class="bonus-package">
+            <h3>ADD-ON FOR EXISTING CLIENTS</h3>
+            <div class="bonus-card">
+                <div class="pkg-price" style="font-size: 1.8rem;">$2,997</div>
+                <div class="pkg-name">Client Retention Autopilot</div>
+                <div class="pkg-problem">You focus on getting new clients — but existing ones quietly stop coming back. By the time you notice, they're gone.</div>
+                <ul class="pkg-features" style="text-align: left;">
+                    <li>Tracks client engagement and activity</li>
+                    <li>Flags at-risk clients (30/60/90 day inactivity)</li>
+                    <li>Auto check-in emails at strategic intervals</li>
+                    <li>Post-project satisfaction survey</li>
+                    <li>AI health score (green/yellow/red) per client</li>
+                    <li>Monthly retention report</li>
+                </ul>
+                <div class="pkg-for"><strong>Built for:</strong> Agencies, professional services, membership businesses</div>
+                <a href="#quote" class="pkg-cta">Add to Any Project</a>
+            </div>
+        </div>
+
+        <p class="packages-delivery"><strong>All packages include:</strong> 30-day bug-fix warranty, full documentation, walkthrough video, and 10% off your next project. Delivery: 5-7 business days.</p>
     </section>
 
     <section id="case-studies" class="case-studies">
@@ -1015,6 +1355,13 @@
         <p>AI Automation Consulting | Minneapolis, Minnesota</p>
         <p>Email: <a href="mailto:bebe@houseofbachae.com">bebe@houseofbachae.com</a></p>
         <p>Phone: <a href="tel:+17632006380">(763) 200-6380</a></p>
+        <div style="margin-top: 20px; margin-bottom: 20px;">
+            <a href="/privacy.html" style="margin: 0 15px; font-size: 0.95rem;">Privacy Policy</a>
+            <a href="/tos.html" style="margin: 0 15px; font-size: 0.95rem;">Terms of Service</a>
+            <a href="/faq.html" style="margin: 0 15px; font-size: 0.95rem;">FAQ</a>
+            <a href="/portfolio.html" style="margin: 0 15px; font-size: 0.95rem;">Our Work</a>
+            <a href="/about.html" style="margin: 0 15px; font-size: 0.95rem;">About</a>
+        </div>
         <p style="margin-top: 30px; color: var(--graphite);">&copy; 2026 House of Bachae. All rights reserved.</p>
     </footer>
 
